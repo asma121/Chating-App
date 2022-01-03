@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		C379037F278335A7005CB748 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379037E278335A7005CB748 /* AppDelegate.swift */; };
 		C3790381278335A7005CB748 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3790380278335A7005CB748 /* SceneDelegate.swift */; };
-		C3790383278335A7005CB748 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3790382278335A7005CB748 /* ViewController.swift */; };
+		C3790383278335A7005CB748 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3790382278335A7005CB748 /* LoginViewController.swift */; };
 		C3790386278335A7005CB748 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3790384278335A7005CB748 /* Main.storyboard */; };
 		C3790388278335A9005CB748 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3790387278335A9005CB748 /* Assets.xcassets */; };
 		C379038B278335A9005CB748 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3790389278335A9005CB748 /* LaunchScreen.storyboard */; };
+		C379039327836D7C005CB748 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379039227836D7C005CB748 /* RegisterViewController.swift */; };
+		C379039527836F24005CB748 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379039427836F24005CB748 /* ProfileViewController.swift */; };
+		C379039727836F5D005CB748 /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379039627836F5D005CB748 /* ConversationViewController.swift */; };
+		C379039927836F89005CB748 /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C379039827836F88005CB748 /* NewConversationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C379037B278335A7005CB748 /* Chating App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chating App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C379037E278335A7005CB748 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3790380278335A7005CB748 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C3790382278335A7005CB748 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C3790382278335A7005CB748 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C3790385278335A7005CB748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3790387278335A9005CB748 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C379038A278335A9005CB748 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C379038C278335A9005CB748 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C379039227836D7C005CB748 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C379039427836F24005CB748 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		C379039627836F5D005CB748 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
+		C379039827836F88005CB748 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,59 @@
 		C379037D278335A7005CB748 /* Chating App */ = {
 			isa = PBXGroup;
 			children = (
-				C379037E278335A7005CB748 /* AppDelegate.swift */,
-				C3790380278335A7005CB748 /* SceneDelegate.swift */,
-				C3790382278335A7005CB748 /* ViewController.swift */,
-				C3790384278335A7005CB748 /* Main.storyboard */,
-				C3790387278335A9005CB748 /* Assets.xcassets */,
-				C3790389278335A9005CB748 /* LaunchScreen.storyboard */,
+				C379039D2783708B005CB748 /* Models */,
+				C379039A27836FC0005CB748 /* Resources */,
+				C379039B27836FE3005CB748 /* Controllers */,
+				C379039C2783706E005CB748 /* Views */,
 				C379038C278335A9005CB748 /* Info.plist */,
 			);
 			path = "Chating App";
+			sourceTree = "<group>";
+		};
+		C379039A27836FC0005CB748 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C379037E278335A7005CB748 /* AppDelegate.swift */,
+				C3790380278335A7005CB748 /* SceneDelegate.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C379039B27836FE3005CB748 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C3790382278335A7005CB748 /* LoginViewController.swift */,
+				C379039227836D7C005CB748 /* RegisterViewController.swift */,
+				C379039427836F24005CB748 /* ProfileViewController.swift */,
+				C379039627836F5D005CB748 /* ConversationViewController.swift */,
+				C379039827836F88005CB748 /* NewConversationViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C379039C2783706E005CB748 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C379039E278370C3005CB748 /* Storyboards */,
+				C3790387278335A9005CB748 /* Assets.xcassets */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C379039D2783708B005CB748 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C379039E278370C3005CB748 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C3790384278335A7005CB748 /* Main.storyboard */,
+				C3790389278335A9005CB748 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,9 +189,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3790383278335A7005CB748 /* ViewController.swift in Sources */,
+				C3790383278335A7005CB748 /* LoginViewController.swift in Sources */,
+				C379039927836F89005CB748 /* NewConversationViewController.swift in Sources */,
 				C379037F278335A7005CB748 /* AppDelegate.swift in Sources */,
+				C379039727836F5D005CB748 /* ConversationViewController.swift in Sources */,
+				C379039527836F24005CB748 /* ProfileViewController.swift in Sources */,
 				C3790381278335A7005CB748 /* SceneDelegate.swift in Sources */,
+				C379039327836D7C005CB748 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +344,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Chating App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,6 +363,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Chating App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
