@@ -22,6 +22,7 @@
 		C37903A527846F1A005CB748 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = C37903A427846F1A005CB748 /* FirebaseStorage */; };
 		C37903A727846F1A005CB748 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C37903A627846F1A005CB748 /* FirebaseAuth */; };
 		C37903A927846F1A005CB748 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C37903A827846F1A005CB748 /* FirebaseDatabase */; };
+		C37903AB2785B7A6005CB748 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37903AA2785B7A6005CB748 /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		C379039627836F5D005CB748 /* ConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		C379039827836F88005CB748 /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		C379039F27846C33005CB748 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C37903AA2785B7A6005CB748 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 			children = (
 				C379037E278335A7005CB748 /* AppDelegate.swift */,
 				C3790380278335A7005CB748 /* SceneDelegate.swift */,
+				C37903AA2785B7A6005CB748 /* DatabaseManager.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C37903AB2785B7A6005CB748 /* DatabaseManager.swift in Sources */,
 				C3790383278335A7005CB748 /* LoginViewController.swift in Sources */,
 				C379039927836F89005CB748 /* NewConversationViewController.swift in Sources */,
 				C379037F278335A7005CB748 /* AppDelegate.swift in Sources */,

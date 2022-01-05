@@ -32,29 +32,39 @@ class RegisterViewController: UIViewController {
     
     @IBAction func registerButtonPressed(_ sender: Any) {
         
-        guard let email = userAddressTF.text , !email.isEmpty else {
-            return
+        guard let firstName = userFirstNameTF.text , !firstName.isEmpty,
+              let lastName = userLastNameTF.text , !lastName.isEmpty,
+              let email = userAddressTF.text , !email.isEmpty,
+              let password = userPassword.text , !password.isEmpty else{
+             // show an  alert .. 
+               return
         }
         
-        guard let password = userPassword.text , !password.isEmpty else {
-            return
+        DatabaseManger.shared.userExists(with: email) { exsist in
+            guard  !exsist else{
+                // alert user exsist ..
+                return
+            }
+            
+            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self] authResult , error  in
+                
+                guard let strongSelf = self else {
+                    return
+                }
+                
+                guard let result = authResult, error == nil else {
+                    print("Error creating user )")
+                    return
+                }
+                let user = result.user
+                print("Created User: \(user)")
+                
+                DatabaseManger.shared.insertUser(with: ChatAppUser(firstName: firstName, lastName: lastName, emailAddress: email))
+                
+                strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+            })
         }
-    
-        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self] authResult , error  in
-            
-            guard let strongSelf = self else {
-                return
-            }
-            
-            guard let result = authResult, error == nil else {
-                print("Error creating user )")
-                return
-            }
-            let user = result.user
-            print("Created User: \(user)")
-            strongSelf.navigationController?.dismiss(animated: true, completion: nil)
-        })
- 
+  
     }
     
  
