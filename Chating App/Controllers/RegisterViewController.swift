@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
 
@@ -20,6 +21,8 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.navigationItem.title = "Register"
+        userPassword.isSecureTextEntry = true
     }
     
     @IBAction func imageViewTapped(_ sender: Any) {
@@ -28,6 +31,30 @@ class RegisterViewController: UIViewController {
     
     
     @IBAction func registerButtonPressed(_ sender: Any) {
+        
+        guard let email = userAddressTF.text , !email.isEmpty else {
+            return
+        }
+        
+        guard let password = userPassword.text , !password.isEmpty else {
+            return
+        }
+    
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self] authResult , error  in
+            
+            guard let strongSelf = self else {
+                return
+            }
+            
+            guard let result = authResult, error == nil else {
+                print("Error creating user )")
+                return
+            }
+            let user = result.user
+            print("Created User: \(user)")
+            strongSelf.navigationController?.dismiss(animated: true, completion: nil)
+        })
+ 
     }
     
  
