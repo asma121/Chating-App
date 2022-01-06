@@ -202,10 +202,32 @@
                     <view key="view" contentMode="scaleToFill" id="Id4-vb-J7l">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="iqa-Z2-JEs">
+                                <rect key="frame" x="50" y="146" width="275" height="150"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CVA-8F-p99">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="150"/>
+                                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="Mnr-70-D5a"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="djr-b2-lRK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="djr-b2-lRK" firstAttribute="trailing" secondItem="iqa-Z2-JEs" secondAttribute="trailing" constant="50" id="NCg-h2-PO0"/>
+                            <constraint firstItem="iqa-Z2-JEs" firstAttribute="leading" secondItem="djr-b2-lRK" secondAttribute="leading" constant="50" id="TIj-Ym-Hgo"/>
+                            <constraint firstItem="iqa-Z2-JEs" firstAttribute="top" secondItem="djr-b2-lRK" secondAttribute="top" constant="50" id="ddW-Q7-dC2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="FW7-2G-Ema"/>
+                    <connections>
+                        <outlet property="profileImageIV" destination="CVA-8F-p99" id="KDA-S2-i5S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gae-hf-bnj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -254,8 +276,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uLl-3q-CXh" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Chats" image="bubble.left.fill" catalog="system" id="8ut-yN-0vZ"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KEm-jV-a61">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="KEm-jV-a61">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -273,8 +295,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uez-hb-AJg" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="person.fill" catalog="system" id="B66-Ds-5GP"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="PR0-vR-XDx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="PR0-vR-XDx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

@@ -10,10 +10,14 @@ import FirebaseAuth
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var profileImageIV: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+//        profileImageIV.layer.cornerRadius = profileImageIV.layer.borderWidth / 2
+        loadPorfilePicture()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .done, target: self, action: #selector(logOutAlert))
     }
@@ -28,7 +32,7 @@ class ProfileViewController: UIViewController {
                 let LoginVC = self.storyboard?.instantiateViewController(identifier: "LoginViewController") as! LoginViewController
                 let nav = UINavigationController(rootViewController: LoginVC)
                 nav.modalPresentationStyle = .fullScreen
-                self.present(nav, animated: false)
+                self.present(nav, animated: true)
             }
             catch {
                 print("Faild to logout")
@@ -38,6 +42,40 @@ class ProfileViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler:nil))
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    func loadPorfilePicture() {
+        guard let email = UserDefaults.standard.value(forKey: "email") as? String else {
+            return
+        }
+        
+        let safeEmail = DatabaseManger.safeEmail(emailAddress: email)
+        
+        let fileName = "\(safeEmail)_profile_picture.png"
+        let path = "images/\(fileName)"
+        
+        StorageManager.shared.downloadURL(for: path) { result in
+            switch result {
+            case .success(let url):
+                self.getImage(imageView: self.profileImageIV, url: url)
+            case .failure(let error):
+                print("faield to get dawonload url : \(error)")
+            }
+        }
+    }
+    
+    func getImage(imageView : UIImageView , url : URL){
+        URLSession.shared.dataTask(with: url, completionHandler: { data ,_ , error in
+            
+            guard let data = data , error == nil else {
+                return
+            }
+            
+            DispatchQueue.main.async {
+                let image = UIImage(data: data)
+                self.profileImageIV.image = image
+            }
+        }).resume()
     }
 
 }

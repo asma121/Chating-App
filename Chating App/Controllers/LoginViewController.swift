@@ -39,6 +39,7 @@ class LoginViewController: UIViewController {
                 print("Failed to log in user with email \(email)")
                 return
             }
+            UserDefaults.standard.set(email, forKey: "email")
             let user = result.user.uid
             print("logged in user: \(user)")
             // if this succeeds, dismiss
