@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseAuth
+import JGProgressHUD
 
 class RegisterViewController: UIViewController {
 
@@ -16,6 +17,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var userAddressTF: UITextField!
     @IBOutlet weak var userImageIV: UIImageView!
     
+    let spinner = JGProgressHUD(style: .dark)
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +26,12 @@ class RegisterViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.navigationItem.title = "Register"
         userPassword.isSecureTextEntry = true
+        
+        userImageIV.layer.masksToBounds = true
+        userImageIV.layer.cornerRadius = userImageIV.frame.height / 2
+        //userImageIV.layer.cornerRadius = userImageIV.frame.width / 2
+        
+        
         
     }
     
@@ -41,6 +50,8 @@ class RegisterViewController: UIViewController {
                return
         }
         
+        spinner.show(in: view)
+        
         DatabaseManger.shared.userExists(with: email) { exsist in
             guard  !exsist else{
                 // alert user exsist ..
@@ -51,6 +62,10 @@ class RegisterViewController: UIViewController {
                 
                 guard let strongSelf = self else {
                     return
+                }
+                
+                DispatchQueue.main.async {
+                    strongSelf.spinner.dismiss()
                 }
                 
                 guard let result = authResult, error == nil else {

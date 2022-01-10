@@ -24,6 +24,11 @@
 		C37903A927846F1A005CB748 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = C37903A827846F1A005CB748 /* FirebaseDatabase */; };
 		C37903AB2785B7A6005CB748 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37903AA2785B7A6005CB748 /* DatabaseManager.swift */; };
 		C37903AD2786FD55005CB748 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37903AC2786FD55005CB748 /* StorageManager.swift */; };
+		C37903AF27875418005CB748 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37903AE27875418005CB748 /* ChatViewController.swift */; };
+		C37903B227887915005CB748 /* MessageKit in Frameworks */ = {isa = PBXBuildFile; productRef = C37903B127887915005CB748 /* MessageKit */; };
+		C37903B527887A36005CB748 /* JGProgressHUD-SwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C37903B427887A36005CB748 /* JGProgressHUD-SwiftUI */; };
+		C37903B7278AC79C005CB748 /* ConversationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37903B6278AC79C005CB748 /* ConversationTableViewCell.swift */; };
+		C37903BA278AF612005CB748 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = C37903B9278AF612005CB748 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +47,8 @@
 		C379039F27846C33005CB748 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C37903AA2785B7A6005CB748 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		C37903AC2786FD55005CB748 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		C37903AE27875418005CB748 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		C37903B6278AC79C005CB748 /* ConversationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,10 +56,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C37903BA278AF612005CB748 /* SDWebImageSwiftUI in Frameworks */,
+				C37903B527887A36005CB748 /* JGProgressHUD-SwiftUI in Frameworks */,
 				C37903A327846F1A005CB748 /* FirebaseAnalytics in Frameworks */,
 				C37903A727846F1A005CB748 /* FirebaseAuth in Frameworks */,
 				C37903A927846F1A005CB748 /* FirebaseDatabase in Frameworks */,
 				C37903A527846F1A005CB748 /* FirebaseStorage in Frameworks */,
+				C37903B227887915005CB748 /* MessageKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +117,7 @@
 				C379039427836F24005CB748 /* ProfileViewController.swift */,
 				C379039627836F5D005CB748 /* ConversationViewController.swift */,
 				C379039827836F88005CB748 /* NewConversationViewController.swift */,
+				C37903AE27875418005CB748 /* ChatViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -116,6 +127,7 @@
 			children = (
 				C379039E278370C3005CB748 /* Storyboards */,
 				C3790387278335A9005CB748 /* Assets.xcassets */,
+				C37903B6278AC79C005CB748 /* ConversationTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -157,6 +169,9 @@
 				C37903A427846F1A005CB748 /* FirebaseStorage */,
 				C37903A627846F1A005CB748 /* FirebaseAuth */,
 				C37903A827846F1A005CB748 /* FirebaseDatabase */,
+				C37903B127887915005CB748 /* MessageKit */,
+				C37903B427887A36005CB748 /* JGProgressHUD-SwiftUI */,
+				C37903B9278AF612005CB748 /* SDWebImageSwiftUI */,
 			);
 			productName = "Chating App";
 			productReference = C379037B278335A7005CB748 /* Chating App.app */;
@@ -187,6 +202,9 @@
 			mainGroup = C3790372278335A7005CB748;
 			packageReferences = (
 				C37903A127846F1A005CB748 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C37903B027887915005CB748 /* XCRemoteSwiftPackageReference "MessageKit" */,
+				C37903B327887A36005CB748 /* XCRemoteSwiftPackageReference "JGProgressHUD-SwiftUI" */,
+				C37903B8278AF611005CB748 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			productRefGroup = C379037C278335A7005CB748 /* Products */;
 			projectDirPath = "";
@@ -221,9 +239,11 @@
 				C379039927836F89005CB748 /* NewConversationViewController.swift in Sources */,
 				C37903AD2786FD55005CB748 /* StorageManager.swift in Sources */,
 				C379037F278335A7005CB748 /* AppDelegate.swift in Sources */,
+				C37903B7278AC79C005CB748 /* ConversationTableViewCell.swift in Sources */,
 				C379039727836F5D005CB748 /* ConversationViewController.swift in Sources */,
 				C379039527836F24005CB748 /* ProfileViewController.swift in Sources */,
 				C3790381278335A7005CB748 /* SceneDelegate.swift in Sources */,
+				C37903AF27875418005CB748 /* ChatViewController.swift in Sources */,
 				C379039327836D7C005CB748 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,6 +456,30 @@
 				minimumVersion = 8.10.0;
 			};
 		};
+		C37903B027887915005CB748 /* XCRemoteSwiftPackageReference "MessageKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MessageKit/MessageKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.7.0;
+			};
+		};
+		C37903B327887A36005CB748 /* XCRemoteSwiftPackageReference "JGProgressHUD-SwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD-SwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
+		C37903B8278AF611005CB748 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.2;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -458,6 +502,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C37903A127846F1A005CB748 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
+		};
+		C37903B127887915005CB748 /* MessageKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C37903B027887915005CB748 /* XCRemoteSwiftPackageReference "MessageKit" */;
+			productName = MessageKit;
+		};
+		C37903B427887A36005CB748 /* JGProgressHUD-SwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C37903B327887A36005CB748 /* XCRemoteSwiftPackageReference "JGProgressHUD-SwiftUI" */;
+			productName = "JGProgressHUD-SwiftUI";
+		};
+		C37903B9278AF612005CB748 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C37903B8278AF611005CB748 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -12,14 +12,27 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profileImageIV: UIImageView!
     
+//    var firstName:String?
+//    var lastName:String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
-//        profileImageIV.layer.cornerRadius = profileImageIV.layer.borderWidth / 2
-        loadPorfilePicture()
+        
+        profileImageIV.layer.masksToBounds = true
+        profileImageIV.layer.cornerRadius = profileImageIV.layer.frame.height / 2
+       
+
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .done, target: self, action: #selector(logOutAlert))
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadPorfilePicture()
+        
+       // print("\(firstName) \(lastName)")
+        
     }
     
     @objc func logOutAlert(){
