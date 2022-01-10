@@ -12,18 +12,25 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profileImageIV: UIImageView!
     
-//    var firstName:String?
-//    var lastName:String?
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         profileImageIV.layer.masksToBounds = true
-        profileImageIV.layer.cornerRadius = profileImageIV.layer.frame.height / 2
-       
-
+        profileImageIV.layer.cornerRadius = profileImageIV.layer.frame.width / 2
         
+        guard let email = UserDefaults.standard.value(forKey: "email") as? String ,
+              let name = UserDefaults.standard.value(forKey: "name") as? String else {
+            return
+        }
+        
+        nameLabel.text = name
+        emailLabel.text = email
+
+        print("\(email) \(name)")
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Log Out", style: .done, target: self, action: #selector(logOutAlert))
     }
     

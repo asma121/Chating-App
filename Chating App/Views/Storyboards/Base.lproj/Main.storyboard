@@ -323,16 +323,38 @@
                                     <constraint firstAttribute="height" constant="150" id="ipV-u6-1XX"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="SAi-Dd-Gsb">
+                                <rect key="frame" x="50" y="329" width="275" height="51"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWO-DP-isN">
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3YQ-8n-Vkn">
+                                        <rect key="frame" x="0.0" y="25.5" width="275" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="djr-b2-lRK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="SAi-Dd-Gsb" firstAttribute="top" secondItem="bcp-tp-k1e" secondAttribute="bottom" constant="33" id="08g-aF-ASx"/>
+                            <constraint firstItem="djr-b2-lRK" firstAttribute="trailing" secondItem="SAi-Dd-Gsb" secondAttribute="trailing" constant="50" id="1VU-1Y-Nws"/>
+                            <constraint firstItem="SAi-Dd-Gsb" firstAttribute="leading" secondItem="djr-b2-lRK" secondAttribute="leading" constant="50" id="TAP-Tl-paF"/>
                             <constraint firstItem="bcp-tp-k1e" firstAttribute="top" secondItem="djr-b2-lRK" secondAttribute="top" constant="50" id="ol0-l9-7sA"/>
                             <constraint firstItem="bcp-tp-k1e" firstAttribute="centerX" secondItem="djr-b2-lRK" secondAttribute="centerX" id="suW-0z-seO"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Profile" id="FW7-2G-Ema"/>
                     <connections>
+                        <outlet property="emailLabel" destination="3YQ-8n-Vkn" id="ocI-Yq-eCF"/>
+                        <outlet property="nameLabel" destination="rWO-DP-isN" id="oBD-hz-A3t"/>
                         <outlet property="profileImageIV" destination="bcp-tp-k1e" id="iwJ-DJ-Ml6"/>
                     </connections>
                 </viewController>
